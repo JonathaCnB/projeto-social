@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+	<head>
+		<title>{% block title %}Projeto Social{% endblock title %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+        <!-- Wrapper -->
+        <div id="wrapper">
+            {% block header %}
+                {% include 'components/_header.html' %}
+            {% endblock header %}
+            
+            {% block nav %}
+                {% include 'components/_topmenu.html' %}
+            {% endblock nav %}
+            
+            {% block main %}
+
+            {% endblock main %}
+            <!-- Sidebar -->
+            <section id="sidebar">
+            {% block sidebar %}
+                {% include 'components/_sidebar.html' %}
+            {% endblock sidebar %}
+            {% block footer %}                
+                {% include 'components/_footer.html' %}
+            {% endblock footer %}            
+            </section>
+        </div>
+
+        <!-- Scripts -->
+        <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/browser.min.js' %}"></script>
+        <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'assets/js/util.js' %}"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    </body>
+</html>
